@@ -7,8 +7,256 @@
     <title>Movie Finder</title>
   </head>
   <body class="min-h-screen w-screen">
-    <div id="app">hola</div>
+    <!-- <div id="app">hola</div> -->
+    <div class="min-h-screen bg-zinc-950 text-white">
+      <!-- Navbar -->
+      <header
+        class="border-b border-zinc-800 px-4 py-4 flex flex-col gap-4 md:flex-row md:items-center md:justify-between"
+      >
+        <div class="flex items-center justify-between">
+          <h1 class="text-2xl font-bold tracking-wide text-sky-400">
+            MovieFinder
+          </h1>
+
+          <button class="md:hidden bg-zinc-800 px-3 py-2 rounded-lg text-sm">
+            Menu
+          </button>
+        </div>
+
+        <div class="flex flex-col gap-3 md:flex-row md:items-center">
+          <input
+            type="text"
+            placeholder="Search movies..."
+            class="bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 outline-none focus:border-sky-500 transition w-full md:w-80"
+          />
+
+          <nav class="flex gap-2">
+            <button
+              class="bg-sky-500 hover:bg-sky-600 transition px-4 py-2 rounded-xl font-medium"
+            >
+              Home
+            </button>
+
+            <button
+              class="bg-zinc-800 hover:bg-zinc-700 transition px-4 py-2 rounded-xl font-medium"
+            >
+              Favorites
+            </button>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Hero Banner -->
+      <section class="relative h-[70vh] overflow-hidden">
+        <img
+          src="https://image.tmdb.org/t/p/original/9yBVqNruk6Ykrwc32qrK2TIE5xw.jpg"
+          alt="Hero Banner"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+
+        <div
+          class="absolute inset-0 bg-linear-to-b from-black via-black/70 to-transparent"
+        ></div>
+
+        <div class="relative z-10 h-full flex items-center px-6 md:px-16">
+          <div class="max-w-2xl space-y-5">
+            <span class="bg-sky-500 text-sm px-3 py-1 rounded-full font-medium">
+              Trending Now
+            </span>
+
+            <h2 class="text-4xl md:text-6xl font-black leading-tight">
+              Spider-Man: Across the Spider-Verse
+            </h2>
+
+            <p class="text-zinc-300 text-sm md:text-lg leading-relaxed">
+              Miles Morales catapults across the Multiverse, where he encounters
+              a team of Spider-People charged with protecting its very
+              existence.
+            </p>
+
+            <div class="flex flex-wrap gap-4">
+              <button
+                class="bg-sky-500 hover:bg-sky-600 transition px-6 py-3 rounded-xl font-semibold"
+              >
+                View Details
+              </button>
+
+              <button
+                class="bg-zinc-800 hover:bg-zinc-700 transition px-6 py-3 rounded-xl font-semibold"
+              >
+                Add to Favorites
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trending Section -->
+      <section class="px-4 md:px-8 py-10">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-2xl font-bold">Trending Movies</h2>
+
+          <button class="text-sky-400 hover:text-sky-300 transition">
+            View All
+          </button>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
+          <!-- Card -->
+          <article
+            class="bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 hover:scale-[1.02] transition"
+          >
+            <div class="relative">
+              <img
+                src="https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg"
+                alt="Movie"
+                class="w-full h-80 object-cover"
+              />
+
+              <span
+                class="absolute top-3 right-3 bg-black/80 px-2 py-1 rounded-lg text-sm"
+              >
+                ⭐ 8.7
+              </span>
+            </div>
+
+            <div class="p-4 space-y-2">
+              <h3 class="font-bold text-lg line-clamp-1">Wonder Woman</h3>
+
+              <p class="text-zinc-400 text-sm">2023 • Action</p>
+
+              <button
+                class="w-full bg-sky-500 hover:bg-sky-600 transition py-2 rounded-xl font-medium mt-3"
+              >
+                Details
+              </button>
+            </div>
+          </article>
+
+          <!-- Duplicate cards -->
+          <article
+            class="bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 hover:scale-[1.02] transition"
+          >
+            <div class="relative">
+              <img
+                src="https://image.tmdb.org/t/p/w500/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg"
+                alt="Movie"
+                class="w-full h-80 object-cover"
+              />
+
+              <span
+                class="absolute top-3 right-3 bg-black/80 px-2 py-1 rounded-lg text-sm"
+              >
+                ⭐ 7.9
+              </span>
+            </div>
+
+            <div class="p-4 space-y-2">
+              <h3 class="font-bold text-lg line-clamp-1">John Wick 4</h3>
+
+              <p class="text-zinc-400 text-sm">2023 • Action</p>
+
+              <button
+                class="w-full bg-sky-500 hover:bg-sky-600 transition py-2 rounded-xl font-medium mt-3"
+              >
+                Details
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 hover:scale-[1.02] transition"
+          >
+            <div class="relative">
+              <img
+                src="https://image.tmdb.org/t/p/w500/2EewmxXe72ogD0EaWM8gqa0ccIw.jpg"
+                alt="Movie"
+                class="w-full h-80 object-cover"
+              />
+
+              <span
+                class="absolute top-3 right-3 bg-black/80 px-2 py-1 rounded-lg text-sm"
+              >
+                ⭐ 8.1
+              </span>
+            </div>
+
+            <div class="p-4 space-y-2">
+              <h3 class="font-bold text-lg line-clamp-1">The Batman</h3>
+
+              <p class="text-zinc-400 text-sm">2022 • Crime</p>
+
+              <button
+                class="w-full bg-sky-500 hover:bg-sky-600 transition py-2 rounded-xl font-medium mt-3"
+              >
+                Details
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 hover:scale-[1.02] transition"
+          >
+            <div class="relative">
+              <img
+                src="https://image.tmdb.org/t/p/w500/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg"
+                alt="Movie"
+                class="w-full h-80 object-cover"
+              />
+
+              <span
+                class="absolute top-3 right-3 bg-black/80 px-2 py-1 rounded-lg text-sm"
+              >
+                ⭐ 7.5
+              </span>
+            </div>
+
+            <div class="p-4 space-y-2">
+              <h3 class="font-bold text-lg line-clamp-1">Black Panther</h3>
+
+              <p class="text-zinc-400 text-sm">2022 • Adventure</p>
+
+              <button
+                class="w-full bg-sky-500 hover:bg-sky-600 transition py-2 rounded-xl font-medium mt-3"
+              >
+                Details
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 hover:scale-[1.02] transition"
+          >
+            <div class="relative">
+              <img
+                src="https://image.tmdb.org/t/p/w500/rktDFPbfHfUbArZ6OOOKsXcv0Bm.jpg"
+                alt="Movie"
+                class="w-full h-80 object-cover"
+              />
+
+              <span
+                class="absolute top-3 right-3 bg-black/80 px-2 py-1 rounded-lg text-sm"
+              >
+                ⭐ 8.3
+              </span>
+            </div>
+
+            <div class="p-4 space-y-2">
+              <h3 class="font-bold text-lg line-clamp-1">Interstellar</h3>
+
+              <p class="text-zinc-400 text-sm">2014 • Sci-Fi</p>
+
+              <button
+                class="w-full bg-sky-500 hover:bg-sky-600 transition py-2 rounded-xl font-medium mt-3"
+              >
+                Details
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
     <!-- <script src="/src/api/example.js" type="module"></script> -->
-    <script type="module" src="/src/main.js"></script>
+     <script type="module" src="/src/main.js"></script> 
   </body>
 </html>
