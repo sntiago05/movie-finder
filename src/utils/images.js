@@ -21,7 +21,6 @@ export const POSTER_SIZES = Object.freeze({
 })
 
 /**
- * 
  * @param {BackDropSize|PosterSize} size 
  * @param {string} path 
  * @returns {string}
