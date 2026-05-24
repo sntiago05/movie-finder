@@ -1,13 +1,6 @@
 import { setUpRequest, BASE_URL as url } from "./config"
-import { TrendingMovie } from "../types/movie.type"
-/**
- * @typedef {Object} TrendingMoviesResponse
- *
- * @property {number} page
- * @property {TrendingMovie[]} results
- * @property {number} total_pages
- * @property {number} total_results
- */
+import { Movie, TrendingMoviesResponse, UpcomingMoviesResponse, TopRatedMoviesResponse } from "../types/movie.type"
+import { tmdbFetch } from "./client"
 
 /**
  * Fetch trending movies from TMDB
@@ -16,13 +9,25 @@ import { TrendingMovie } from "../types/movie.type"
  * @returns {Promise<TrendingMoviesResponse>}
  */
 export async function getTrendingMovies(timeWindow, page = 1) {
-    try {
-        const response = await fetch(`${url}/trending/movie/${timeWindow}?language=en-US&page=${page}`, setUpRequest("GET"))
-        const data = await response.json()
-        if (!response.ok) throw new Error(data.status_message)
-        return data
-    } catch (err) {
-        console.log(err);
-    }
+    return tmdbFetch(`/trending/movie/${timeWindow}?language=en-US&page=${page}`)
+}
+/**
+ * Fetch upcoming movies from TMDB
+ * 
+ * @param {number} page
+ * @returns {Promise<UpcomingMoviesResponse>}
+ */
+export async function getUpcomingMovies(page = 1) {
+    return tmdbFetch(`/movie/upcoming?language=en-US&page=${page}`)
+}
+
+/**
+ * Fetch top rated movies from TMDB
+ * 
+ * @param {number} page
+ * @returns {Promise<TopRatedMoviesResponse>}
+ */
+export async function getTopRatedMovies(page = 1) {
+    return tmdbFetch(`/movie/top_rated?page=${page}`)
 }
 

@@ -1,4 +1,4 @@
-import { TrendingMovie } from "../types/movie.type";
+import { Movie } from "../types/movie.type";
 import { BACKDROP_SIZES, getImageUrl } from "../utils/images";
 /**
  * Renders the application Hero Banner

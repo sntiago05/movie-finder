@@ -1,10 +1,11 @@
 import getGenres from "../api/genres"
-import { TrendingMovie } from "../types/movie.type"
+import { Movie } from "../types/movie.type"
+import formatDate from "../utils/formatDate"
 import { getImageUrl, POSTER_SIZES } from "../utils/images"
 /**
  * Renders a movie card
  *
- * @param {TrendingMovie} movie
+ * @param {Movie} movie
  * @param {Map<number, string>} genres
  * @returns {string}
  */
@@ -22,17 +23,18 @@ export default function movieCard(movie, genres) {
               <span
                 class="absolute top-3 right-3 bg-black/80 px-2 py-1 rounded-lg text-sm"
               >
-                ⭐ ${movie.vote_average}
+                ⭐ ${movie.vote_average.toFixed(1)}
               </span>
             </div>
 
             <div class="p-4 space-y-2">
               <h3 class="font-bold text-lg line-clamp-1">${movie.title}</h3>
 
-              <p class="text-zinc-400 text-sm">2023 • ${genres.get(movie.genre_ids[0])}</p>
+              <p class="text-zinc-400 text-sm">${formatDate(movie.release_date)} • ${genres.get(movie.genre_ids[0])}</p>
 
               <button
-                class="w-full bg-sky-500 hover:bg-sky-600 transition py-2 rounded-xl font-medium mt-3"
+              data-id="${movie.id}"
+                class="btn-details w-full bg-sky-500 hover:bg-sky-600 transition py-2 rounded-xl font-medium mt-3"
               >
                 Details
               </button>
