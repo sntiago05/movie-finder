@@ -1,6 +1,6 @@
 import getGenres from "../api/genres"
 import { getTopRatedMovies, getTrendingMovies, getUpcomingMovies } from "../api/movies"
-import movieCard from "../components/card"
+import movieCard from "../components/movieCard"
 import heroBanner from "../components/heroBanner";
 import navBar from "../components/navbar";
 import section from "../components/section";
@@ -19,11 +19,14 @@ export default async function homePage() {
        ${navBar()}
        <main>
          <!-- Trending Section -->
-         ${section("Trending Movies", trendingCards)}
+        ${section({
+    title: "Trending Movies",
+    content: trendingCards
+  })}
          <!-- Upcoming Section -->
-         ${section("Upcoming Movies", upcomingCards)}
+         ${section({ title: "Upcoming Movies", content: upcomingCards })}
         <!-- Top Rated Section -->
-         ${section("Top Rated Movies", topRatedCards)}
+         ${section({ title: "Top Rated Movies", content: topRatedCards })}
          </main>
        </div>`
 }

@@ -13,6 +13,10 @@ export default async function router() {
     if (hash.startsWith("#/movie/")) {
         const id = hash.split("/")[2]
         app.innerHTML = await movieDetailsPage(id)
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
         return
     }
 

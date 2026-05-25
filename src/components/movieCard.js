@@ -4,7 +4,6 @@ import formatDate from "../utils/formatDate"
 import { getImageUrl, POSTER_SIZES } from "../utils/images"
 /**
  * Renders a movie card
- *
  * @param {Movie} movie
  * @param {Map<number, string>} genres
  * @returns {string}
@@ -33,8 +32,8 @@ export default function movieCard(movie, genres) {
               <p class="text-zinc-400 text-sm">${formatDate(movie.release_date)} • ${genres.get(movie.genre_ids[0])}</p>
 
               <button
-              data-id="${movie.id}"
-                class="btn-details w-full bg-sky-500 hover:bg-sky-600 transition py-2 rounded-xl font-medium mt-3"
+                 data-id="${movie.id}"
+                class="btn-details cursor-pointer w-full bg-sky-500 hover:bg-sky-600 transition py-2 rounded-xl font-medium mt-3"
               >
                 Details
               </button>

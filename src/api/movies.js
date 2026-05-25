@@ -1,5 +1,12 @@
 import { setUpRequest, BASE_URL as url } from "./config"
-import { Movie, TrendingMoviesResponse, UpcomingMoviesResponse, TopRatedMoviesResponse } from "../types/movie.type"
+import {
+    Movie,
+    TrendingMoviesResponse,
+    UpcomingMoviesResponse,
+    TopRatedMoviesResponse,
+    RecommendationsResponse
+} from "../types/movie.type"
+import { MovieDetails } from "../types/details.type"
 import { tmdbFetch } from "./client"
 
 /**
@@ -30,4 +37,19 @@ export async function getUpcomingMovies(page = 1) {
 export async function getTopRatedMovies(page = 1) {
     return tmdbFetch(`/movie/top_rated?page=${page}`)
 }
-
+/**
+ * 
+ * @param {number} id 
+ * @returns {Promise<MovieDetails>} 
+ */
+export async function getMovieDetails(id) {
+    return tmdbFetch(`movie/${id}`)
+}
+/**
+ * 
+ * @param {number} id 
+ * @returns {RecommendationsResponse}
+ */
+export async function getMovieRecommendations(id) {
+    return tmdbFetch(`movie/${id}/recommendations`)
+}
